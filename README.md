@@ -26,3 +26,15 @@ kubectl get nodes
 
 If you see above output, it confirms that master and worker nodes are in ready status. Now, this cluster is ready for the workload.
 
+
+---
+
+> **Note:** if during setup you didn't changed the **pod network CIDR** to a different ip range then you don't need to do updated it in the custom-resources.yaml. However, if you initialized it with different ip range e.g 10.0.0.0/16 using follwoing command:
+```
+sudo kubeadm init --pod-network-cidr=10.0.0.0/16 
+```
+then you will need to updated it in the custom-resources.yaml file as well using below command:
+```
+sed -i 's/cidr: 192\.168\.0\.0\/16/cidr: 10.0.0.0\/16/g' custom-resources.yaml
+```
+---
