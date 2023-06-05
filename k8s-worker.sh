@@ -31,7 +31,7 @@ sudo sh -c "echo 'deb https://packages.cloud.google.com/apt kubernetes-xenial ma
 #-----------
 sudo apt update
 sudo apt install -y apt-transport-https ca-certificates curl 
-sudo apt install -y kubelet kubeadm kubelet docker.io
+sudo apt install -y kubelet=1.26.5-00 kubeadm=1.26.5-00 kubectl=1.26.5-00 docker.io
 sudo apt-mark hold kubelet kubeadm kubectl docker.io
 sudo mkdir /etc/containerd
 sudo sh -c "containerd config default > /etc/containerd/config.toml"
